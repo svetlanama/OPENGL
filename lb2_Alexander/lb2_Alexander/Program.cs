@@ -33,56 +33,19 @@ namespace lb2_Alexander
             Glu.gluLookAt(1f, 1f, 5f, 0f, 0f, 0f, 0f, 1f, 0f);
         }
 
-
-        static void drawLines()
-        {
-            Gl.glBegin(Gl.GL_LINES);
-            Gl.glColor3f(0.0f, 1.0f, 0.0f); // ось x
-            Gl.glVertex3f(0f, 0f, 0f);
-            Gl.glVertex3f(10f, 0f, 0f);
-
-            Gl.glColor3f(1.0f, 0.0f, 0.0f); // ось y
-            Gl.glVertex3f(0f, 0f, 0f);
-            Gl.glVertex3f(0f, 10f, 0f);
-
-            Gl.glColor3f(0.0f, 0.0f, 1.0f); // ось z
-            Gl.glVertex3f(0f, 0f, 0f);
-            Gl.glVertex3f(0f, 0f, 10f);
-            Gl.glEnd();
-        }
-
-        static void drawDottedLines()
-        {
-            Gl.glEnable(Gl.GL_LINE_STIPPLE);				// Построение точесных линий - отрицательные координаты
-            Gl.glLineStipple(1, 0x0101);				   // Узор для линий
-            Gl.glBegin(Gl.GL_LINES);
-            Gl.glColor3f(0.0f, 1.0f, 0.0f);         // Green for x axis
-            Gl.glVertex3f(-10f, 0f, 0f);
-            Gl.glVertex3f(0f, 0f, 0f);
-
-            Gl.glColor3f(1.0f, 0.0f, 0.0f);             // Red for y axis
-            Gl.glVertex3f(0f, 0f, 0f);
-            Gl.glVertex3f(0f, -10f, 0f);
-
-            Gl.glColor3f(0.0f, 0.0f, 1.0f);             // Blue for z axis
-            Gl.glVertex3f(0f, 0f, 0f);
-            Gl.glVertex3f(0f, 0f, -10f);
-            Gl.glEnd();
-        }
-
-        static void figureMotion()
+        static void FigureMotion()
         {
             // Уменьшение размеров фигуры
             Gl.glScalef(_figureScale, _figureScale, _figureScale);
         }
 
-        static void calculateNewFigureSize()
+        static void CalculateNewFigureSize()
         {
             //Уменьшение  фигуры
             _figureScale = _figureScale >= 1 ? _figureScale - 0.95f : 3.0f;
         }
 
-        static void drawSquad()
+        static void DrawSquad()
         {
             //Четирех-угольник
             Gl.glBegin(Gl.GL_QUADS);
@@ -99,17 +62,16 @@ namespace lb2_Alexander
             Gl.glClear(Gl.GL_COLOR_BUFFER_BIT);
             Gl.glPushMatrix();
 
-            drawLines();
-            drawDottedLines();
+            Axis3D.DrawAxis();
 
-            figureMotion();
-            drawSquad();
+            FigureMotion();
+            DrawSquad();
 
             Gl.glDisable(Gl.GL_LINE_STIPPLE);
             Gl.glPopMatrix();
             Glut.glutSwapBuffers();
 
-            calculateNewFigureSize();
+            CalculateNewFigureSize();
         }
 
         static void SetupTimer(int value)
