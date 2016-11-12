@@ -11,6 +11,12 @@ namespace lb3
 {
     class Program
     {
+        private static float _anglePyramidX = 0.0f;
+        private static float _anglePyramidY = 0.0f;
+        private static float _anglePyramidZ = 0.0f;
+
+        private static int _refreshMills = 15;
+
         static void Init()
         {
             Gl.glClearColor(0.0f, 0.0f, 0.0f, 1.0f); // Set background color to black and opaque
@@ -43,6 +49,9 @@ namespace lb3
 
             Gl.glTranslatef(3f, 3f, 3f);
             Gl.glScalef(3f, 3f, 3f);
+            Gl.glRotatef(_anglePyramidX, 1.0f, 0f, 0f);
+            Gl.glRotatef(_anglePyramidY, 0f, 1.0f, 0f);
+            Gl.glRotatef(_anglePyramidZ, 0f, 0f, 1.0f);
             Gl.glBegin(Gl.GL_TRIANGLES);
                 
                 // Front
@@ -80,6 +89,17 @@ namespace lb3
 
             Gl.glPopMatrix();
             Glut.glutSwapBuffers();
+
+            // вращение
+            _anglePyramidX += 1f;
+            _anglePyramidY += 1.5f;
+            _anglePyramidZ += 0.5f;
+        }
+
+        static void Timer(int value)
+        {
+            Glut.glutPostRedisplay();
+            Glut.glutTimerFunc(_refreshMills, Timer, 0);
         }
 
         static void Reshape(int w, int h)
@@ -104,6 +124,7 @@ namespace lb3
             Glut.glutCreateWindow("OPENGL LB3");
             Glut.glutReshapeFunc(Reshape);
             Glut.glutDisplayFunc(Display);
+            Glut.glutTimerFunc(0, Timer, 0);
 
             Init();
 
