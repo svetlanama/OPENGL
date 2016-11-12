@@ -37,7 +37,6 @@ namespace lb1_Alexander
 
             Axis3D.DrawAxis();
 
-            Gl.glDisable(Gl.GL_LINE_STIPPLE);
             Gl.glPopMatrix();
             Glut.glutSwapBuffers();
         }

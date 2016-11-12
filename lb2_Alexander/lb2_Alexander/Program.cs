@@ -67,7 +67,6 @@ namespace lb2_Alexander
             FigureMotion();
             DrawSquad();
 
-            Gl.glDisable(Gl.GL_LINE_STIPPLE);
             Gl.glPopMatrix();
             Glut.glutSwapBuffers();
 

@@ -82,8 +82,8 @@ namespace lb4_Alexander
             FigureMotion();
 
             // Установка материала шара
-             Gl.glLightfv(Gl.GL_LIGHT0, Gl.GL_POSITION, light1);
-             Gl.glLightfv(Gl.GL_LIGHT1, Gl.GL_POSITION, light2);
+            Gl.glLightfv(Gl.GL_LIGHT0, Gl.GL_POSITION, light1);
+            Gl.glLightfv(Gl.GL_LIGHT1, Gl.GL_POSITION, light2);
             Gl.glMaterialfv(Gl.GL_FRONT, Gl.GL_AMBIENT, ambient);
             Gl.glMaterialfv(Gl.GL_FRONT, Gl.GL_DIFFUSE, diffuse);
             Gl.glMaterialfv(Gl.GL_FRONT, Gl.GL_SPECULAR, specular);
@@ -92,7 +92,6 @@ namespace lb4_Alexander
 
             // Отрисовка шара
             Glut.glutSolidSphere(3.0, 50, 50); // шар с радиусом 3
-
 
             Gl.glPopMatrix();
             Glut.glutSwapBuffers(); // Переключение буфферов отрисовки

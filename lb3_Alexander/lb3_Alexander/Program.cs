@@ -60,7 +60,6 @@ namespace lb3_Alexander
             RotatePyramid();
             DrawPyramid();
 
-            Gl.glDisable(Gl.GL_LINE_STIPPLE);
             Gl.glPopMatrix();
             Glut.glutSwapBuffers();
         }

@@ -50,6 +50,8 @@ namespace lb1_Alexander
             Gl.glVertex3f(0f, 0f, 0f);
             Gl.glVertex3f(0f, 0f, -10f);
             Gl.glEnd();
+
+            Gl.glDisable(Gl.GL_LINE_STIPPLE);
         }
     }
 }
