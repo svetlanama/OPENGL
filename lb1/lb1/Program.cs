@@ -10,7 +10,7 @@ namespace lb1
 {
     class Program
     {
-        static void init()
+        static void Init()
         {
             Gl.glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
             Gl.glShadeModel(Gl.GL_FLAT);
@@ -18,7 +18,7 @@ namespace lb1
             Gl.glHint(Gl.GL_LINE_SMOOTH_HINT, Gl.GL_NICEST);
         }
 
-        static void display()
+        static void Display()
         {
             Gl.glClear(Gl.GL_COLOR_BUFFER_BIT);
             Gl.glPushMatrix();
@@ -42,7 +42,7 @@ namespace lb1
             Glut.glutSwapBuffers();
         }
 
-        static void reshape(int w, int h)
+        static void Reshape(int w, int h)
         {
             Gl.glViewport(0, 0, w/2, h/2);
             Gl.glMatrixMode(Gl.GL_PROJECTION);
@@ -50,7 +50,7 @@ namespace lb1
             Glu.gluPerspective(75f, (float) w / (float) h, 0.1f, 100f);
             Gl.glMatrixMode(Gl.GL_MODELVIEW);
             Gl.glLoadIdentity();
-            Glu.gluLookAt(10f, 10f, 15f, 0f, 0f, 0f, 0f, 1f, 0f);
+            Glu.gluLookAt(15f, 15f, 15f, 0f, 0f, 0f, 0f, 1f, 0f);
         }
 
         static void Main(string[] args)
@@ -59,10 +59,10 @@ namespace lb1
             Glut.glutInitDisplayMode(Glut.GLUT_DOUBLE | Glut.GLUT_RGB);
             Glut.glutInitWindowSize(600, 600);
             Glut.glutCreateWindow("OPENGL LB1");
-            init();
+            Init();
 
-            Glut.glutReshapeFunc(reshape);
-            Glut.glutDisplayFunc(display);
+            Glut.glutReshapeFunc(Reshape);
+            Glut.glutDisplayFunc(Display);
 
             Glut.glutMainLoop();
         }
