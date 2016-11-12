@@ -14,7 +14,7 @@ namespace lb1_Alexander
     {
         static void Initialization()
         {
-            Gl.glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
+            Gl.glClearColor(0.5f, 0.5f, 0.5f, 0.0f);
             Gl.glShadeModel(Gl.GL_FLAT);
             Gl.glEnable(Gl.GL_LINE_SMOOTH);
             Gl.glHint(Gl.GL_LINE_SMOOTH_HINT, Gl.GL_NICEST);
