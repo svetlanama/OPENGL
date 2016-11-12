@@ -1,0 +1,12 @@
+D:\Repos\OPENGL\lb1\lb1\bin\Debug\lb1.exe.config
+D:\Repos\OPENGL\lb1\lb1\bin\Debug\lb1.exe
+D:\Repos\OPENGL\lb1\lb1\bin\Debug\lb1.pdb
+D:\Repos\OPENGL\lb1\lb1\obj\Debug\lb1.csprojResolveAssemblyReference.cache
+D:\Repos\OPENGL\lb1\lb1\obj\Debug\lb1.exe
+D:\Repos\OPENGL\lb1\lb1\obj\Debug\lb1.pdb
+D:\Repos\OPENGL\lb1\lb1\bin\Debug\Tao.Cg.dll
+D:\Repos\OPENGL\lb1\lb1\bin\Debug\Tao.FreeGlut.dll
+D:\Repos\OPENGL\lb1\lb1\bin\Debug\Tao.OpenGl.dll
+D:\Repos\OPENGL\lb1\lb1\bin\Debug\Tao.Cg.xml
+D:\Repos\OPENGL\lb1\lb1\bin\Debug\Tao.FreeGlut.xml
+D:\Repos\OPENGL\lb1\lb1\bin\Debug\Tao.OpenGl.xml
