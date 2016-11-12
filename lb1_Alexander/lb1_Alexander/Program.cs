@@ -8,8 +8,6 @@ using Tao.FreeGlut;
 
 namespace lb1_Alexander
 {
-
-
     class Program
     {
         
@@ -23,10 +21,10 @@ namespace lb1_Alexander
 
         static void Reshape(int w, int h)
         {
-            Gl.glViewport(0, h / 2, w / 2, h / 2); // вывод в певром квадрате клиентской области
+            Gl.glViewport(0, h / 2, w / 2, h / 2); // вывод в певром квадранте клиентской области
             Gl.glMatrixMode(Gl.GL_PROJECTION);
             Gl.glLoadIdentity();
-            Gl.glOrtho(-1, 1, -1, 1, -1, 1); // установка ортографического проектирования
+            Gl.glOrtho(-1, 1, -1, 1, -1, 1); // установка ортографической проекции
 
             Gl.glMatrixMode(Gl.GL_MODELVIEW);
             Gl.glLoadIdentity();

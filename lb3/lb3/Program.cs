@@ -47,85 +47,44 @@ namespace lb3
                  Gl.glVertex3f(0f, 0f, 14f);
              Gl.glEnd();
 
-
-
-            /* Gl.glTranslatef(3f, 3f, 3f);
-             Gl.glScalef(3f, 3f, 3f);
-             Gl.glRotatef(_anglePyramidX, 1.0f, 0f, 0f);
-             Gl.glRotatef(_anglePyramidY, 0f, 1.0f, 0f);
-             Gl.glRotatef(_anglePyramidZ, 0f, 0f, 1.0f);
-             Gl.glBegin(Gl.GL_TRIANGLES);
-
-                 // Front
-                 Gl.glColor3f(1.0f, 0.0f, 0.0f);     // красный
-                 Gl.glVertex3f(0.0f, 1.0f, 0.0f);
-                 Gl.glColor3f(0.0f, 1.0f, 0.0f);     // зеленый
-                 Gl.glVertex3f(-1.0f, -1.0f, 1.0f);
-                 Gl.glColor3f(0.0f, 0.0f, 1.0f);     // голубой
-                 Gl.glVertex3f(1.0f, -1.0f, 1.0f);
-
-                 // Right
-                 Gl.glColor3f(1.0f, 0.0f, 0.0f);     // красный
-                 Gl.glVertex3f(0.0f, 1.0f, 0.0f);
-                 Gl.glColor3f(0.0f, 0.0f, 1.0f);     // голубой
-                 Gl.glVertex3f(1.0f, -1.0f, 1.0f);
-                 Gl.glColor3f(0.0f, 1.0f, 0.0f);     // зеленый
-                 Gl.glVertex3f(1.0f, -1.0f, -1.0f);
-
-                 // Back
-                 Gl.glColor3f(1.0f, 0.0f, 0.0f);     // красный
-                 Gl.glVertex3f(0.0f, 1.0f, 0.0f);
-                 Gl.glColor3f(0.0f, 1.0f, 0.0f);     // зеленый
-                 Gl.glVertex3f(1.0f, -1.0f, -1.0f);
-                 Gl.glColor3f(0.0f, 0.0f, 1.0f);     // голубой
-                 Gl.glVertex3f(-1.0f, -1.0f, -1.0f);
-
-                 // Left
-                 Gl.glColor3f(1.0f, 0.0f, 0.0f);       // красный
-                 Gl.glVertex3f(0.0f, 1.0f, 0.0f);
-                 Gl.glColor3f(0.0f, 0.0f, 1.0f);       // голубой
-                 Gl.glVertex3f(-1.0f, -1.0f, -1.0f);
-                 Gl.glColor3f(0.0f, 1.0f, 0.0f);       // зеленый
-                 Gl.glVertex3f(-1.0f, -1.0f, 1.0f);
-             Gl.glEnd();
-             */
-
+            Gl.glTranslatef(3f, 3f, 3f);
+            Gl.glScalef(3f, 3f, 3f);
+            Gl.glRotatef(_anglePyramidX, 1.0f, 0f, 0f);
             Gl.glRotatef(_anglePyramidY, 0f, 1.0f, 0f);
+            Gl.glRotatef(_anglePyramidZ, 0f, 0f, 1.0f);
+
             Gl.glBegin(Gl.GL_TRIANGLES);
 
-
-               Gl.glColor3f(1.0f, 0.0f, 0.0f);     // красный
-               Gl.glVertex3f(-0.6f, -1.0f, 1.0f);    // левая
-               Gl.glVertex3f(0.0f, 1.0f, 0.0f);    // вершина
-               Gl.glVertex3f(1.0f, -1.0f, 1.0f); // правая грань
+                Gl.glColor3f(1.0f, 0.0f, 0.0f);     // красный
+                Gl.glVertex3f(-0.6f, -1.0f, 1.0f);    // левая
+                Gl.glVertex3f(0.0f, 1.0f, 0.0f);    // вершина
+                Gl.glVertex3f(1.0f, -1.0f, 1.0f); // правая грань
 
             
-               Gl.glColor3f(0.0f, 0.0f, 1.0f);     // голубой
-               Gl.glVertex3f(1.0f, -1.0f, 1.0f);   // левая 
-               Gl.glVertex3f(0.0f, 1.0f, 0.0f);   // вершина
-               Gl.glVertex3f(1.0f, -1.0f, -0.6f); // правая
+                Gl.glColor3f(0.0f, 0.0f, 1.0f);     // голубой
+                Gl.glVertex3f(1.0f, -1.0f, 1.0f);   // левая 
+                Gl.glVertex3f(0.0f, 1.0f, 0.0f);   // вершина
+                Gl.glVertex3f(1.0f, -1.0f, -0.6f); // правая
 
 
-               Gl.glColor3f(1.0f, 1.0f, 0.0f);     // желтый
-               Gl.glVertex3f(1.0f, -1.0f, -0.6f);   // левая 
-               Gl.glVertex3f(0.0f, 1.0f, 0.0f);   // вершина
-              // Gl.glVertex3f(-1.0f, -1.0f, 1.0f);
-               Gl.glVertex3f(-0.3f, -0.8f, -1.0f); //  правая
+                Gl.glColor3f(1.0f, 1.0f, 0.0f);     // желтый
+                Gl.glVertex3f(1.0f, -1.0f, -0.6f);   // левая
+                Gl.glVertex3f(0.0f, 1.0f, 0.0f);   // вершина
+                // Gl.glVertex3f(-1.0f, -1.0f, 1.0f);
+                Gl.glVertex3f(-0.3f, -0.8f, -1.0f); //  правая
 
 
-              Gl.glColor3f(0.0f, 1.0f, 0.0f);     // зелен
-              Gl.glVertex3f(-0.3f, -0.8f, -1.0f);   // левая 
-              Gl.glVertex3f(0.0f, 1.0f, 0.0f);   // вершина
-              Gl.glVertex3f(-1.3f, -0.8f, -0.3f);   //  правая 
+                Gl.glColor3f(0.0f, 1.0f, 0.0f);     // зелен
+                Gl.glVertex3f(-0.3f, -0.8f, -1.0f);   // левая 
+                Gl.glVertex3f(0.0f, 1.0f, 0.0f);   // вершина
+                Gl.glVertex3f(-1.3f, -0.8f, -0.3f);   //  правая 
 
-            Gl.glColor3f(0.0f, 1.0f, 1.0f);     // бирюзовый
-            Gl.glVertex3f(-1.3f, -0.8f, -0.3f);   // левая 
-            Gl.glVertex3f(0.0f, 1.0f, 0.0f);   // вершина
-            Gl.glVertex3f(-0.6f, -1.0f, 1.0f);   //  правая  
-
+                Gl.glColor3f(0.0f, 1.0f, 1.0f);     // бирюзовый
+                Gl.glVertex3f(-1.3f, -0.8f, -0.3f);   // левая 
+                Gl.glVertex3f(0.0f, 1.0f, 0.0f);   // вершина
+                Gl.glVertex3f(-0.6f, -1.0f, 1.0f);   //  правая  
 
             Gl.glEnd();
-
 
             Gl.glPopMatrix();
             Glut.glutSwapBuffers();
