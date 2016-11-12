@@ -11,7 +11,6 @@ namespace lb2_Alexander
     class Program
     {
         private static float _figureScale = 3.0f;
-        private static int _widowSize = 800;
         private static int _mlsec = 1000;
 
         static void InitializeViewAppearance()
@@ -84,7 +83,7 @@ namespace lb2_Alexander
         {
             Glut.glutInit();
             Glut.glutInitDisplayMode(Glut.GLUT_DOUBLE | Glut.GLUT_RGB);
-            Glut.glutInitWindowSize(_widowSize, _widowSize);
+            Glut.glutInitWindowSize(800, 800);
             Glut.glutCreateWindow("LB2: Squad");
             InitializeViewAppearance();
 
@@ -96,7 +95,7 @@ namespace lb2_Alexander
         }
 
 
-         static void Main(string[] args)
+        static void Main(string[] args)
         {
             CreateWindow();
         }

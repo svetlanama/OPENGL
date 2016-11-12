@@ -11,17 +11,16 @@ namespace lb3_Alexander
 {
     class Program
     {
-        private static int _widowSize = 800;
         private static float _anglePyramidY = 0.0f;
         private static float _anglePyramidX = 0.0f;
-        private static int _mlsec = 100;
+        private static int _mlsec = 10;
 
         static void CreateWindow()
         {
             Glut.glutInit();
             Glut.glutInitDisplayMode(Glut.GLUT_DOUBLE | Glut.GLUT_RGB);
-            Glut.glutInitWindowSize(_widowSize, _widowSize);
-            Glut.glutCreateWindow("LB1: Piramid");
+            Glut.glutInitWindowSize(800, 600);
+            Glut.glutCreateWindow("LB3: Pyramid");
             InitializeViewAppearance();
 
             Glut.glutReshapeFunc(Reshape);
@@ -33,10 +32,12 @@ namespace lb3_Alexander
 
         static void InitializeViewAppearance()
         {
-            Gl.glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
-           // Gl.glShadeModel(Gl.GL_FLAT);
-            Gl.glEnable(Gl.GL_LINE_SMOOTH);
-            Gl.glHint(Gl.GL_LINE_SMOOTH_HINT, Gl.GL_NICEST);
+            Gl.glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
+            Gl.glClearDepth(1.0f);
+            Gl.glEnable(Gl.GL_DEPTH_TEST);
+            Gl.glDepthFunc(Gl.GL_LEQUAL);
+            Gl.glShadeModel(Gl.GL_SMOOTH);
+            Gl.glHint(Gl.GL_PERSPECTIVE_CORRECTION_HINT, Gl.GL_NICEST);
         }
 
         static void Reshape(int w, int h)
@@ -56,18 +57,19 @@ namespace lb3_Alexander
             Gl.glPushMatrix();
 
             Axis3D.DrawAxis();
-            FigureMotion();
-            DrawTriangle();
+            RotatePyramid();
+            DrawPyramid();
 
             Gl.glDisable(Gl.GL_LINE_STIPPLE);
             Gl.glPopMatrix();
             Glut.glutSwapBuffers();
-
-            CalculateNewFigureSize();
         }
 
-        static void DrawTriangle()
+        static void DrawPyramid()
         {
+            Gl.glTranslatef(1f, 0f, 1f);
+            Gl.glRotatef(_anglePyramidY, 1.0f, 0f, 0f);
+            Gl.glRotatef(_anglePyramidX, 0f, 1.0f, 0f);
             Gl.glBegin(Gl.GL_TRIANGLES);
 
             // Front
@@ -102,16 +104,21 @@ namespace lb3_Alexander
             Gl.glColor3f(0.0f, 1.0f, 0.0f);       // зеленый
             Gl.glVertex3f(-1.0f, -1.0f, 1.0f);
             Gl.glEnd();
+
+            // Bottom
+            Gl.glBegin(Gl.GL_QUADS);
+            Gl.glColor3f(1.0f, 0.5f, 0.0f);     // Orange
+            Gl.glVertex3f(1.0f, -1.0f, 1.0f);
+            Gl.glColor3f(1.0f, 0.0f, 0.0f);       // красный
+            Gl.glVertex3f(-1.0f, -1.0f, 1.0f);
+            Gl.glColor3f(0.0f, 0.0f, 1.0f);       // голубой
+            Gl.glVertex3f(-1.0f, -1.0f, -1.0f);
+            Gl.glColor3f(0.0f, 1.0f, 0.0f);       // зеленый
+            Gl.glVertex3f(1.0f, -1.0f, -1.0f);
+            Gl.glEnd();
         }
 
-        static void FigureMotion()
-        {
-            // Вращение фигуры вокруг Y
-            Gl.glRotatef(_anglePyramidY, 0f, 1.0f, 0f);
-            Gl.glRotatef(_anglePyramidX, 0f, 1.0f, 0f);
-        }
-
-        static void CalculateNewFigureSize()
+        static void RotatePyramid()
         {
             _anglePyramidY += 1;
             _anglePyramidX += 1;

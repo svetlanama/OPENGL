@@ -36,18 +36,18 @@ namespace lb3_Alexander
 
         static void DrawAxisDottedLines()
         {
-            Gl.glEnable(Gl.GL_LINE_STIPPLE);				// Построение точесных линий - отрицательные координаты
-            Gl.glLineStipple(1, 0x0101);				   // Узор для линий
+            Gl.glEnable(Gl.GL_LINE_STIPPLE); // Построение точечных линий - отрицательные координаты
+            Gl.glLineStipple(1, 0x0101);     // Узор для линий
             Gl.glBegin(Gl.GL_LINES);
-            Gl.glColor3f(0.0f, 1.0f, 0.0f);         // Green for x axis
+            Gl.glColor3f(0.0f, 1.0f, 0.0f);  // Green for x axis
             Gl.glVertex3f(-10f, 0f, 0f);
             Gl.glVertex3f(0f, 0f, 0f);
 
-            Gl.glColor3f(1.0f, 0.0f, 0.0f);             // Red for y axis
+            Gl.glColor3f(1.0f, 0.0f, 0.0f);  // Red for y axis
             Gl.glVertex3f(0f, 0f, 0f);
             Gl.glVertex3f(0f, -10f, 0f);
 
-            Gl.glColor3f(0.0f, 0.0f, 1.0f);             // Blue for z axis
+            Gl.glColor3f(0.0f, 0.0f, 1.0f);  // Blue for z axis
             Gl.glVertex3f(0f, 0f, 0f);
             Gl.glVertex3f(0f, 0f, -10f);
             Gl.glEnd();
