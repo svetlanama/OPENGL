@@ -87,6 +87,7 @@ namespace lb2
             Glut.glutPostRedisplay();
             Glut.glutTimerFunc(1000, Timer, 0);
         }
+
         static void Main(string[] args)
         {
             Glut.glutInit();
