@@ -90,7 +90,7 @@ namespace lb4
                 Gl.glMaterialf(Gl.GL_FRONT, Gl.GL_SHININESS, no_shininess);
                 Gl.glMaterialfv(Gl.GL_FRONT, Gl.GL_EMISSION, mat_emission);
                 Glut.glutSolidSphere(1.0, 50, 50);
-            Gl.glPopMatrix();
+           Gl.glPopMatrix();
 
             Glut.glutSwapBuffers();
 

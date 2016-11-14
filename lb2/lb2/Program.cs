@@ -14,13 +14,13 @@ namespace lb2
         private static float quadPosZ = 0.0f;
         private static float quadScale = 0.0f;
 
-        /*static void Init()
+        static void Init()
         {
             Gl.glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
             Gl.glShadeModel(Gl.GL_FLAT);
             Gl.glEnable(Gl.GL_LINE_SMOOTH);
             Gl.glHint(Gl.GL_LINE_SMOOTH_HINT, Gl.GL_NICEST);
-        }*/
+        }
 
         static void Reshape(int w, int h)
         {
@@ -94,7 +94,7 @@ namespace lb2
             Glut.glutInitDisplayMode(Glut.GLUT_DOUBLE | Glut.GLUT_RGB);
             Glut.glutInitWindowSize(600, 600);
             Glut.glutCreateWindow("OPENGL LB1");
-            //Init();
+            Init();
 
             Glut.glutReshapeFunc(Reshape);
             Glut.glutDisplayFunc(Display);
